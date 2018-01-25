@@ -1,0 +1,24 @@
+{
+  "development": {
+    "username": "m55734d1",
+    "password": "v0qpr9mq3rbj27s9",
+    "database": "m55734d1",
+    "host": "176.31.174.21",
+    "dialect": "mysql",
+    "port": 3306
+  },
+  "test": {
+    "username": "",
+    "password": null,
+    "database": "",
+    "host": "",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "",
+    "password": null,
+    "database": "",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
