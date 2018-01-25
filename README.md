@@ -31,7 +31,6 @@ and hit the play button (cmd-return), then you should get this on the right side
 
 ```json
 {
-  {
     "data": {
       "getContentByMenuLang": {
         "id": "2",
@@ -39,6 +38,5 @@ and hit the play button (cmd-return), then you should get this on the right side
         "content": "..."
         }
     }
-  }
 }
 ```
