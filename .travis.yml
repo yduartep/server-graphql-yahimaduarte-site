@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - 'node'
+cache:
+  directories:
+    - node_modules
+branches:
+   only:
+      - master
+before_script:
+   - npm install
+script:
+  - npm run jshint
+  - npm start

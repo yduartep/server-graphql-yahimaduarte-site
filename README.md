@@ -18,7 +18,7 @@ When you paste this on the left side of the page:
 ```graphql
 {
   query {
-    getContentByMenuLang(menu: "Biografia", language: "ES"){
+    contentByMenuLang(menu: "Biografia", language: "ES"){
       id,
       title,
       content
@@ -32,7 +32,7 @@ and hit the play button (cmd-return), then you should get this on the right side
 ```json
 {
     "data": {
-      "getContentByMenuLang": {
+      "contentByMenuLang": {
         "id": "2",
         "title": "BIOGRAFIA",
         "content": "..."

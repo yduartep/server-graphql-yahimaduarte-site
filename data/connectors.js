@@ -11,23 +11,40 @@ const db = new Sequelize(dbConfig.database, dbConfig.username, dbConfig.password
 });
 
 // Create Content Table Structure
-var ContentModel = db.define('content', {
+db.define('content', {
     id: {autoIncrement: true, primaryKey: true, type: Sequelize.INTEGER},
     title: Sequelize.STRING,
     content: Sequelize.STRING,
     language: Sequelize.STRING,
     menu: Sequelize.STRING,
-}, {
-    // don't add the timestamp attributes (updatedAt, createdAt)
-    timestamps: false,
+}, {timestamps: false, freezeTableName: true, tableName: 'ydp_content'});
 
-    // disable the modification of table names
-    freezeTableName: true,
+db.define('projects', {
+    id: {autoIncrement: true, primaryKey: true, type: Sequelize.INTEGER},
+    year: Sequelize.INTEGER,
+    description: Sequelize.STRING,
+    technologies: Sequelize.STRING,
+    image: Sequelize.STRING,
+    language: Sequelize.STRING,
+}, {timestamps: false, freezeTableName: true, tableName: 'yd_profile'});
 
-    // define the table's name
-    tableName: 'yd_content'
-});
+db.define('experiences', {
+    id: {autoIncrement: true, primaryKey: true, type: Sequelize.INTEGER},
+    title: Sequelize.STRING,
+    subtitle: Sequelize.STRING,
+    company: Sequelize.STRING,
+    from: Sequelize.DataTypes.DATE,
+    to: Sequelize.DataTypes.DATE,
+    city: Sequelize.STRING,
+    country: Sequelize.STRING,
+    logo: Sequelize.STRING,
+    description: Sequelize.STRING,
+    profileType: Sequelize.STRING,
+    language: Sequelize.STRING
+}, {timestamps: false, freezeTableName: true, tableName: 'ydp_profile'});
 
 const Content = db.models.content;
+const Project = db.models.projects;
+const Experience = db.models.experiences;
 
-export {Content};
+export {Content, Project, Experience};

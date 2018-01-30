@@ -1,10 +1,17 @@
-import {Content} from './connectors';
+'use strict';
+import {Content, Experience, Project} from './connectors';
 
 const resolvers = {
     Query: {
-        getContentByMenuLang(root, args) {
-            return Content.find({where: args});
-        }
+        contentByMenuLang(root, args) {
+            return Content.findAll({where: args});
+        },
+        projectsByLang(root, args) {
+            return Project.findAll({where: args});
+        },
+        experiencesByTypeLang(root, args) {
+            return Experience.findAll({where: args});
+        },
     }
 };
 
