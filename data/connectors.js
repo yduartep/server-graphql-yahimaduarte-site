@@ -22,11 +22,13 @@ db.define('content', {
 db.define('projects', {
     id: {autoIncrement: true, primaryKey: true, type: Sequelize.INTEGER},
     year: Sequelize.INTEGER,
+    title: Sequelize.STRING,
     description: Sequelize.STRING,
-    technologies: Sequelize.STRING,
+    tags: Sequelize.STRING,
     image: Sequelize.STRING,
     language: Sequelize.STRING,
-}, {timestamps: false, freezeTableName: true, tableName: 'yd_profile'});
+    active: Sequelize.DataTypes.BOOLEAN
+}, {timestamps: false, freezeTableName: true, tableName: 'ydp_projects'});
 
 db.define('experiences', {
     id: {autoIncrement: true, primaryKey: true, type: Sequelize.INTEGER},

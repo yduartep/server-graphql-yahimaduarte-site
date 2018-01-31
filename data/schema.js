@@ -15,9 +15,12 @@ const typeDefs = `
     type Project {
         id: ID!                
         year: Int
+        title: String
         description: String
-        technologies: String
+        tags: String
         image: String
+        language: String
+        active: Int
     }
     type Experience {
         id: ID!                
