@@ -1,4 +1,4 @@
-# server-yahimaduarte-site
+# Apollo GraphQL Server for www.yahimaduarte.com
 
 Apollo GraphQL Server for querying mysql database of the web site www.yahimaduarte.com.
 
