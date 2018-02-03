@@ -1,5 +1,5 @@
 'use strict';
-import {Content, Experience, Project} from './connectors';
+import {Content, Experience, Project, Skill} from './connectors';
 
 const resolvers = {
     Query: {
@@ -12,6 +12,9 @@ const resolvers = {
         experiencesByTypeLang(root, args) {
             return Experience.findAll({where: args});
         },
+        skillsByLayer(root, args) {
+            return Skill.findAll({where: args});
+        }
     }
 };
 

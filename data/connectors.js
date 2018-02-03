@@ -10,7 +10,6 @@ const db = new Sequelize(dbConfig.database, dbConfig.username, dbConfig.password
     dialect: dbConfig.dialect
 });
 
-// Create Content Table Structure
 db.define('content', {
     id: {autoIncrement: true, primaryKey: true, type: Sequelize.INTEGER},
     title: Sequelize.STRING,
@@ -45,8 +44,16 @@ db.define('experiences', {
     language: Sequelize.STRING
 }, {timestamps: false, freezeTableName: true, tableName: 'ydp_profile'});
 
+db.define('skills', {
+    id: {autoIncrement: true, primaryKey: true, type: Sequelize.INTEGER},
+    skill: Sequelize.DataTypes.STRING,
+    rating: Sequelize.DataTypes.INTEGER,
+    layer: Sequelize.DataTypes.STRING
+}, {timestamps: false, freezeTableName: true, tableName: 'ydp_skills'});
+
 const Content = db.models.content;
 const Project = db.models.projects;
 const Experience = db.models.experiences;
+const Skill = db.models.skills;
 
-export {Content, Project, Experience};
+export {Content, Project, Experience, Skill};

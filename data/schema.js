@@ -6,6 +6,7 @@ const typeDefs = `
         contentByMenuLang(menu: String, language: String): [Content]
         projectsByLang(language: String): [Project]
         experiencesByTypeLang(profileType: String, language: String): [Experience]
+        skillsByLayer(layer: String): [Skill]
     }
     type Content {
         id: ID!                
@@ -35,6 +36,12 @@ const typeDefs = `
         description: String,
         profileType: String,
         language: String
+    }
+    type Skill {
+        id: ID!                
+        skill: String
+        rating: Int
+        layer: String
     }
 `;
 
